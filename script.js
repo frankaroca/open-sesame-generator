@@ -7,6 +7,11 @@ var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numericChars = "0123456789";
 var specialChars = "!@#$%^&*()-_=+[]{}|;:,.<>?";
 
+// Function to generate a random character from a given string
+function getRandomCharacter(characters) {
+  var randomIndex = Math.floor(Math.random() * characters.length);
+  return characters[randomIndex];
+}
 
 
 // Write password to the #password input
