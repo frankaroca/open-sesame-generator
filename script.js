@@ -13,14 +13,14 @@ function getRandomCharacter(characters) {
   return characters[randomIndex];
 }
 
+// Function to generate the password
+function generatePassword() {
+  var password = "";
+  var passwordLength = parseInt(prompt("Enter the desired password length:"));
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+    alert("Please enter a valid password length between 8 and 128.");
+    return "";
+  }
 
-  passwordText.value = password;
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+ 
