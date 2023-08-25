@@ -29,3 +29,29 @@ function generatePassword() {
   const useSpecial = confirm("Include special characters?");
 
  
+  if (!useLowercase && !useUppercase && !useNumeric && !useSpecial) {
+    alert("Please select at least one character set to include.");
+    return "";
+  }
+
+  var availableChars = "";
+
+  if (useLowercase) {
+    availableChars += lowercaseChars;
+  }
+  if (useUppercase) {
+    availableChars += uppercaseChars;
+  }
+  if (useNumeric) {
+    availableChars += numericChars;
+  }
+  if (useSpecial) {
+    availableChars += specialChars;
+  }
+
+  for (var i = 0; i < passwordLength; i++) {
+    password += getRandomCharacter(availableChars);
+  }
+
+  return password;
+}
